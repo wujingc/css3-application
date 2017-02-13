@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>css</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+     var face=$(".face"),time=0;
+
+       var turn=function(){
+        
+         time++;
+         if(time%2==1){var deg=360*10+Math.floor(Math.random()*360);}
+         else{deg=Math.floor(Math.random()*360);}
+         face.css({
+            "-webkit-transform": "rotate(" +deg + "deg)",
+            "transform": "rotate(" + deg + "deg)"
+         });
+         var money,angle;
+         angle=deg%360;
+         
+            if( 36<angle&&angle<108){money=20;}
+            else if(108<angle&&angle<180){money=10;}
+            else if(180<angle&&angle<252){money=60;}
+            else if(252<angle&&angle<324){money=40;}
+            else if(angle<36||angle>324){money=30;}
+         
+         console.log(money);
+       
+       }
+       
+       $(".pointer").click(turn);
+       $("#transition").click(function(){
+        $(".transition").toggleClass("on");
+       })
+       })
+    </script>
+</head>
+<body>
+    <div class="wrap">
+      <p class="css3">CSS3应用实例</p>
+      <div class='box' id="big">
+        <p class="box-p">模仿幻灯片(点击缩小图播放)</p>
+        <div class="content " style="height:700px;">
+          <div class="slide">
+            <div class="hi"><img  src="images/bg1.jpg"></div>
+            <div class="slidebig">
+            <img class="imgone all" id="one"src="images/bg1.jpg">
+            <img class="imgtwo all" id="two"src="images/bg2.jpg">
+            <img class="imgthree all" id="three"src="images/bg3.jpg">
+            <img class="imgfour all" id="four"src="images/bg4.jpg">
+            
+           </div>
+          <div class="slidesmall">
+            <ul>
+              <li ><a href="#one"><img class="smallone"src="images/sbg1.jpg"></a></li>
+              <li ><a href="#two"><img class="smalltwo"src="images/sbg2.jpg"></a></li>
+              <li><a href="#three"><img class="smallthree" src="images/sbg3.jpg"></a></li>
+              <li><a href="#four"><img  class="smallfour"src="images/sbg4.jpg"></a></li>
+            </ul>
+          </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class='box'>
+        <p class="box-p">text-shadow</p>
+        <div class="content">
+          <p class="textshadow middle">吕善敏</p>
+        </div>
+      </div>
+      <div class='box'>
+        <p class="box-p">gradient 渐变</p>
+        <div class="content">
+          <div class="gradient middle">
+
+          </div>
+        </div>
+      </div>
+      <div class='box'>
+        <p class="box-p">transition</p>
+        <div class="content bgblack" id="transition">
+          <div class="transition">
+            <div class="transitionimg"><img src="images/me.jpg"><span>吕善敏</span></div>
+            <div class="transitioncontent" >前端工程师</div>
+          </div>
+        </div>
+      </div>
+      <div class='box'>
+        <p class="box-p">animation</p>
+        <div class="content bgblack">
+          <div class="animation">
+             <ul>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class='box'>
+        <p class="box-p">transform、perspective</p>
+        <div class="content">
+          <div class="transform">
+            <div class="father">
+            <div class="before common">1</div>
+            <div class="left common ">2</div>
+            <div class="back common">3</div>
+            <div class="right common">4</div>
+            <div class="top common">5</div>
+            <div class="bottom common">6</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='box'>
+        <p class="box-p">转盘rotate</p>
+        <div class="content">
+           <div class="game middle">
+            <img src="images/game_bg.jpg" alt="">
+            <!-- 转盘 -->
+            <div class="turntable">
+                <!-- 转盘指针 -->
+                <div class="pointer">
+                    <a class="startbtn" href="javascript:;"><img src="images/pointer.png" alt=""></a>
+                </div>
+                <!-- 转盘面，可转动部分 -->
+                <div class="face">
+                    <img src="images/face.png" alt="">
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='box'>
+        <p class="box-p">border-images</p>
+        <div class="content">
+          <div class="borderimages middle"></div>
+        </div>
+      </div>
+      <div class='box'>
+        <p class="box-p">border-shadow</p>
+        <div class="content">
+          <div class="boxshadow middle"></div>
+        </div>
+      </div>
+      <div class='box'>
+        <p class="box-p">background-size</p>
+        <div class="content">
+          <div class="background middle">
+          </div>
+        </div>
+      </div>
+     
+    </div>
+    
+</body>
+</html>
